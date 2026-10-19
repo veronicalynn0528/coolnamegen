@@ -6,6 +6,7 @@
   const currentPath = () => allowedPaths.has(location.pathname) ? location.pathname : "/404";
   let publicPath = currentPath();
   let lastPagePath = null;
+  const pageTitles = {"/": "CoolNameGen — Free Name Generator for Every Occasion", "/privacy-policy": "Privacy Policy — CoolNameGen", "/terms-of-service": "Terms of Service — CoolNameGen", "/404": "Page Not Found — CoolNameGen", "/elf-name-generator": "Elf Name Generator — Free Elven Names for Fantasy", "/viking-name-generator": "Viking Name Generator — Free Norse & Scandinavian Names", "/norse-name-generator": "Norse Name Generator — Free Old Norse Names with Meanings", "/nord-name-generator": "Nord Name Generator — Nordic & Scandinavian Names", "/nordic-name-generator": "Nordic Name Generator — Scandinavian Names for Free", "/medieval-name-generator": "Medieval Name Generator — Free Middle Ages Names", "/warriors-name-generator": "Warriors Name Generator — Epic Fighter & Battle Names", "/elvish-name-generator": "Elvish Name Generator — Free Tolkien-Style Elf Names", "/name-generator-for-elves": "Name Generator for Elves — High, Wood & Dark Elf Names", "/graffiti-name-generator": "Graffiti Name Generator — Free Street Tag & Alias Names", "/rap-name-generator": "Rap Name Generator — Free Hip-Hop Name Maker", "/rapper-name-generator": "Rapper Name Generator — Find Your Hip-Hop Stage Name", "/dj-name-generator": "DJ Name Generator — Free DJ & Producer Name Ideas", "/song-name-generator": "Song Name Generator — Free Song Title Ideas", "/podcast-name-generator": "Podcast Name Generator — Free Show Name Ideas", "/artist-name-generator": "Artist Name Generator — Free Creative Alias Ideas", "/cat-name-generator": "Cat Name Generator — Free Kitten & Cat Name Ideas", "/pet-name-generator": "Pet Name Generator — Free Names for Any Pet", "/puppy-name-generator": "Puppy Name Generator — Free Dog & Puppy Name Ideas", "/horse-name-generator": "Horse Name Generator — Free Equine Name Ideas", "/restaurant-name-generator": "Restaurant Name Generator — Free Dining Name Ideas", "/bakery-name-generator": "Bakery Name Generator — Free Bakery & Café Name Ideas", "/cafe-name-generator": "Cafe Name Generator — Free Coffee Shop Name Ideas", "/diner-name-generator": "Diner Name Generator — Free Restaurant & Diner Names", "/farm-name-generator": "Farm Name Generator — Free Homestead & Ranch Names", "/boat-name-generator": "Boat Name Generator — Free Nautical & Vessel Names", "/middle-name-generator": "Middle Name Generator — Free Middle Name Ideas", "/sibling-name-generator": "Sibling Name Generator — Free Matching Sibling Names", "/email-name-generator": "Email Name Generator — Free Professional Email Ideas", "/combine-name-generator": "Combine Name Generator — Free Name Merger Tool", "/team-name-generator": "Team Name Generator — Free Sports & Group Name Ideas", "/team-name-generator-using-keywords": "Team Name Generator Using Keywords — Custom Team Names", "/project-name-generator": "Project Name Generator — Free Code & Campaign Names"};
   let choice = readChoice();
   let region = 'unknown';
   let loaded = false;
@@ -55,7 +56,7 @@
     window.gtag('config', id, {
       page_location: location.origin + path,
       page_referrer: referrer,
-      page_title: document.title,
+      page_title: pageTitles[publicPath],
       send_page_view: false,
       allow_google_signals: false,
       allow_ad_personalization_signals: false
@@ -69,8 +70,8 @@
   function pageView() {
     if (!loaded || window['ga-disable-' + id] || lastPagePath === publicPath) return;
     lastPagePath = publicPath;
-    window.gtag('set', {page_location: location.origin + publicPath, page_title: document.title});
-    window.gtag('event', 'page_view', {page_location: location.origin + publicPath, page_title: document.title});
+    window.gtag('set', {page_location: location.origin + publicPath, page_title: pageTitles[publicPath]});
+    window.gtag('event', 'page_view', {page_location: location.origin + publicPath, page_title: pageTitles[publicPath]});
   }
   window.addEventListener('analytics-page', () => { publicPath = currentPath(); pageView(); });
   function show() {
