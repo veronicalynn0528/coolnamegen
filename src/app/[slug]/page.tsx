@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AdSlot from "@/components/AdSlot";
 import NameGenerator from "@/components/NameGenerator";
+import { generateNames } from "@/lib/nameGenerator";
 import {
   getGeneratorBySlug,
   getRelatedGenerators,
@@ -70,7 +71,7 @@ export default async function GeneratorPage({ params }: Props) {
             </div>
 
             {/* Generator Tool */}
-            <NameGenerator slug={gen.slug} />
+            <NameGenerator key={gen.slug} slug={gen.slug} initialResults={generateNames(gen.slug, "all", 10)} />
 
             {/* Ad Slot */}
             <div className="my-12">

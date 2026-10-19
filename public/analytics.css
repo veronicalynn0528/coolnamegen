@@ -1,0 +1,7 @@
+[data-privacy-settings] { border: 0; background: transparent; color: inherit; text-decoration: underline; cursor: pointer; font: inherit; }
+.analytics-consent { position: fixed; z-index: 1000; bottom: 1rem; left: 1rem; right: 1rem; max-width: 36rem; padding: 1rem; border: 1px solid #b8b1a4; border-radius: .5rem; background: #fffdf7; color: #1c1c1c; box-shadow: 0 4px 24px #0002; font: 14px/1.5 system-ui, sans-serif; }
+.analytics-consent[hidden] { display: none; }
+.analytics-consent p { margin: 0 0 .75rem; color: inherit; }
+.analytics-consent a { color: #245d91; }
+.analytics-consent div { display: flex; flex-wrap: wrap; gap: .75rem; }
+.analytics-consent button { padding: .5rem 1rem; border: 1px solid #625d54; border-radius: .25rem; background: #fff; color: #1c1c1c; font: inherit; cursor: pointer; }

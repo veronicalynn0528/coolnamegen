@@ -91,6 +91,7 @@ export default function Footer() {
               Legal
             </h3>
             <ul className="space-y-2">
+              <li><button type="button" data-privacy-settings>Privacy settings</button></li>
               <li>
                 <Link
                   href="/privacy-policy"

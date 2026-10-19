@@ -6,12 +6,11 @@ import { generateNames, type NameResult } from "@/lib/nameGenerator";
 
 interface Props {
   slug: string;
+  initialResults: NameResult[];
 }
 
-export default function NameGenerator({ slug }: Props) {
-  const [results, setResults] = useState<NameResult[]>(() =>
-    generateNames(slug, "all", 10)
-  );
+export default function NameGenerator({ slug, initialResults }: Props) {
+  const [results, setResults] = useState<NameResult[]>(initialResults);
   const [gender, setGender] = useState<"male" | "female" | "all">("all");
   const [count, setCount] = useState<10 | 20 | 50>(10);
   const [isGenerating, setIsGenerating] = useState(false);

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import Analytics from "@/components/Analytics";
 
 export const metadata: Metadata = {
   title: "CoolNameGen — Free Name Generator for Every Occasion",
@@ -37,12 +38,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="ga4-measurement-id" content="G-5X4NEGP0RV" />
+        <link rel="stylesheet" href="/analytics.css" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         />
       </head>
-      <body>{children}</body>
+      <body>{children}<Analytics /></body>
     </html>
   );
 }
