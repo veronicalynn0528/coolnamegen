@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { categories, type Category } from '@/data/generators';
-import Link from 'next/link';
 
 const navCategories: Category[] = [
   'fantasy',
@@ -21,25 +20,25 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
+          <a href="/" className="flex items-center gap-2 shrink-0">
             <span className="material-symbols-outlined text-primary text-2xl">
               auto_awesome
             </span>
             <span className=" text-xl font-bold text-primary">
               CoolNameGen
             </span>
-          </Link>
+          </a>
 
           {/* Desktop nav links */}
           <nav className="hidden md:flex items-center gap-1">
             {navCategories.map((cat) => (
-              <Link
+              <a
                 key={cat}
                 href={`/#categories`}
                 className="px-3 py-2 rounded-lg text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
               >
                 {categories[cat].label}
-              </Link>
+              </a>
             ))}
           </nav>
 
@@ -73,7 +72,7 @@ export default function Header() {
         <nav className="md:hidden border-t border-outline-variant bg-surface-lowest">
           <div className="px-4 py-3 space-y-1">
             {navCategories.map((cat) => (
-              <Link
+              <a
                 key={cat}
                 href={`/#categories`}
                 className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
@@ -83,7 +82,7 @@ export default function Header() {
                   {categories[cat].icon}
                 </span>
                 {categories[cat].label}
-              </Link>
+              </a>
             ))}
           </div>
           <div className="px-4 pb-3">

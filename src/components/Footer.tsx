@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { generators, categories, type Category } from '@/data/generators';
 
 const topSlugs = [
@@ -52,12 +51,12 @@ export default function Footer() {
             <ul className="space-y-2">
               {topGenerators.map((g) => (
                 <li key={g.slug}>
-                  <Link
+                  <a
                     href={`/${g.slug}`}
                     className="text-sm text-primary-fixed-dim/80 hover:text-primary-fixed transition-colors"
                   >
                     {g.title}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -71,7 +70,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {categoryKeys.map((cat) => (
                 <li key={cat}>
-                  <Link
+                  <a
                     href="/#categories"
                     className="flex items-center gap-2 text-sm text-primary-fixed-dim/80 hover:text-primary-fixed transition-colors"
                   >
@@ -79,7 +78,7 @@ export default function Footer() {
                       {categories[cat].icon}
                     </span>
                     {categories[cat].label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -93,20 +92,20 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><button type="button" data-privacy-settings>Privacy settings</button></li>
               <li>
-                <Link
+                <a
                   href="/privacy-policy"
                   className="text-sm text-primary-fixed-dim/80 hover:text-primary-fixed transition-colors"
                 >
                   Privacy Policy
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="/terms-of-service"
                   className="text-sm text-primary-fixed-dim/80 hover:text-primary-fixed transition-colors"
                 >
                   Terms of Service
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

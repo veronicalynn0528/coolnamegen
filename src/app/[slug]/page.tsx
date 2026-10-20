@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -46,16 +45,16 @@ export default async function GeneratorPage({ params }: Props) {
           <div className="lg:col-span-8">
             {/* Breadcrumb */}
             <nav className="flex items-center gap-2 text-sm text-on-surface-variant mb-6">
-              <Link href="/" className="hover:text-primary transition-colors">
+              <a href="/" className="hover:text-primary transition-colors">
                 Home
-              </Link>
+              </a>
               <span className="material-symbols-outlined text-xs">chevron_right</span>
-              <Link
+              <a
                 href="/#categories"
                 className="hover:text-primary transition-colors"
               >
                 {gen.category.charAt(0).toUpperCase() + gen.category.slice(1)}
-              </Link>
+              </a>
               <span className="material-symbols-outlined text-xs">chevron_right</span>
               <span className="text-primary font-medium">{gen.title}</span>
             </nav>
@@ -114,7 +113,7 @@ export default async function GeneratorPage({ params }: Props) {
               </h3>
               <div className="grid grid-cols-1 gap-4">
                 {related.map((rel) => (
-                  <Link
+                  <a
                     key={rel.slug}
                     href={`/${rel.slug}`}
                     className="group flex items-center gap-4 p-4 bg-surface-lowest rounded-2xl hover:bg-primary hover:text-white transition-all"
@@ -132,7 +131,7 @@ export default async function GeneratorPage({ params }: Props) {
                         {rel.volume.toLocaleString()} searches/mo
                       </div>
                     </div>
-                  </Link>
+                  </a>
                 ))}
               </div>
             </div>

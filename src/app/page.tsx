@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AdSlot from "@/components/AdSlot";
@@ -27,7 +26,7 @@ export default function HomePage() {
                 The perfect name is just one click away.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link
+                <a
                   href="/rap-name-generator"
                   className="px-8 py-4 bg-secondary-container text-on-secondary-container font-bold text-lg rounded-xl shadow-lg hover:brightness-105 transition-all flex items-center gap-2"
                 >
@@ -35,7 +34,7 @@ export default function HomePage() {
                     auto_awesome
                   </span>
                   Try Random Generator
-                </Link>
+                </a>
                 <a
                   href="#categories"
                   className="px-8 py-4 bg-surface-lowest text-primary font-bold text-lg rounded-xl border border-outline-variant/20 hover:bg-surface-low transition-all"
@@ -150,7 +149,7 @@ export default function HomePage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {popularGenerators.map((g) => (
-                <Link
+                <a
                   key={g.slug}
                   href={`/${g.slug}`}
                   className="bg-surface-lowest p-5 rounded-2xl flex items-center justify-between hover:scale-[1.02] transition-transform shadow-sm"
@@ -166,7 +165,7 @@ export default function HomePage() {
                   <div className="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
                     <span className="material-symbols-outlined">arrow_forward</span>
                   </div>
-                </Link>
+                </a>
               ))}
             </div>
           </div>

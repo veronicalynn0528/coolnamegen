@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -131,9 +130,9 @@ export default function TermsOfServicePage() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-outline-variant">
-          <Link href="/" className="text-primary font-bold hover:underline">
+          <a href="/" className="text-primary font-bold hover:underline">
             ← Back to Home
-          </Link>
+          </a>
         </div>
       </main>
       <Footer />
