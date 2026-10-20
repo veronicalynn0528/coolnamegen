@@ -3,6 +3,7 @@ import "./globals.css";
 import Analytics from "@/components/Analytics";
 
 export const metadata: Metadata = {
+  other: { "ga4-measurement-id": "G-5X4NEGP0RV" },
   title: "CoolNameGen — Free Name Generator for Every Occasion",
   description:
     "35+ free name generators. Viking names, rap names, elf names, pet names, business names and more. Instant results, no signup required.",
@@ -38,7 +39,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="ga4-measurement-id" content="G-5X4NEGP0RV" />
         <link rel="stylesheet" href="/analytics.css" />
         <link
           rel="stylesheet"
