@@ -1,5 +1,14 @@
 # 酷名字生成器
 
+## 2026-10-27 · 页面联系邮箱统一 hello@（已上线，P06-19）
+
+- 源码 `5a0e5f1`（task/19 合入 main，已 push）；Vercel 生产 `dpl_B39rQJ1G12quZfV1492HXRZUJ3W4`，别名 coolnamegen.com 已核对。回滚点：上一个生产 `dpl_6XVqij5UBbVybiocMTceq49a3X9P`（源码 `9867c88`）。
+- 改动只有两处页面文案：`/privacy-policy` 的 `privacy@coolnamegen.com` → `hello@coolnamegen.com`；`/terms-of-service` 的 `legal@coolnamegen.com` → `hello@coolnamegen.com`。GA4/同意逻辑、Stripe、登录、DNS/MX 均未动。
+- 发布前核对：线上仍是 `9867c88`（7 天前那次部署），未漂移；本地 main 有 2 个未推送的 docs 提交（`ebe909c`、`0b34a37`），与线上源码不同源，本次从 `origin/main` 开 worktree 改，未覆盖它们。
+- 线上验证：`/`、`/privacy-policy`、`/terms-of-service` 全 200；两个法律页 mailto 均为 hello@；首页仍含 `G-5X4NEGP0RV`，`/api/consent-region` 200。
+- 未验证：hello@ 实际收信（Porkbun MX 存在：fwd1/fwd2.porkbun.com，但邮箱路由是否指向有人看的收件箱本轮没测，也未发测试邮件）。
+- worktree 已删。
+
 ## 2026-10-19 · 生产验收补齐404原始head
 
 - 已发布 f208896 / dpl_6wuCj8aD6XXjESD6rY4veRtCyWYt，正式三页各一次204及DE/US通过；404返回框架错误HTML时手写head meta只在序列化数据出现。
