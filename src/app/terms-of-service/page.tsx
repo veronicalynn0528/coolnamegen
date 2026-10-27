@@ -120,10 +120,10 @@ export default function TermsOfServicePage() {
           <p>
             For questions about these terms, please contact us at{" "}
             <a
-              href="mailto:legal@coolnamegen.com"
+              href="mailto:hello@coolnamegen.com"
               className="text-primary underline"
             >
-              legal@coolnamegen.com
+              hello@coolnamegen.com
             </a>
             .
           </p>

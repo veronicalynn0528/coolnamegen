@@ -77,10 +77,10 @@ export default function PrivacyPolicyPage() {
             If you have any questions about this privacy policy, please contact
             us at{" "}
             <a
-              href="mailto:privacy@coolnamegen.com"
+              href="mailto:hello@coolnamegen.com"
               className="text-primary underline"
             >
-              privacy@coolnamegen.com
+              hello@coolnamegen.com
             </a>
             .
           </p>
